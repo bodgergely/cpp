@@ -1,0 +1,13 @@
+x64/
+Release/
+Debug/
+cpp/x64
+cpp/Release
+cpp/Debug/
+cpp/x64
+input.txt
+**/*.ilk
+**/*.pdb
+**/*.exe
+.vs/
+**/*.swp
