@@ -2,5 +2,6 @@ alias t='clang-tidy -header-filter=.* ./cpp/main.cpp -- -DDEBUG -std=c++20 -Wall
 alias b='./build.sh'
 alias run='$PWD/cpp/main.exe'
 alias r='b && run'
+alias e='vim ./cpp/main.cpp'
 
 alias clang-tidy-flags="clang-tidy --list-checks -checks='*'"

@@ -2,8 +2,106 @@
 
 #include <chrono>
 #include <cstdio>
+#include <fstream>
+#include <vector>
+#include <set>
+#include <unordered_set>
+#include <map>
+#include <unordered_map>
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, const std::vector<T>& vec)
+{
+    std::stringstream buf;
+    buf << "[";
+    for(int i=0;i<vec.size();i++) {
+        buf << vec[i];
+        buf << ", ";
+    }
+    auto res = buf.str();
+    res.pop_back();
+    res.pop_back();
+    res.push_back(']');
+    os << res;
+    return os;
+}
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, const std::set<T>& cont)
+{
+    std::stringstream buf;
+    buf << "[";
+    for(auto it=cont.begin();it!=cont.end();it++) {
+        buf << *it;
+        buf << ", ";
+    }
+    auto res = buf.str();
+    res.pop_back();
+    res.pop_back();
+    res.push_back(']');
+    os << res;
+    return os;
+}
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, const std::unordered_set<T>& cont)
+{
+    std::stringstream buf;
+    buf << "{";
+    for(auto it=cont.begin();it!=cont.end();it++) {
+        buf << *it;
+        buf << ", ";
+    }
+    auto res = buf.str();
+    res.pop_back();
+    res.pop_back();
+    res.push_back('}');
+    os << res;
+    return os;
+}
+
+template<typename K, typename V>
+std::ostream& operator<<(std::ostream& os, const std::map<K, V>& cont)
+{
+    std::stringstream buf;
+    buf << "{";
+    for(auto it=cont.begin();it!=cont.end();it++) {
+        buf << it->first;
+        buf << ": ";
+        buf << it->second;
+        buf << ", ";
+    }
+    auto res = buf.str();
+    res.pop_back();
+    res.pop_back();
+    res.push_back('}');
+    os << res;
+    return os;
+}
+
+template<typename K, typename V>
+std::ostream& operator<<(std::ostream& os, const std::unordered_map<K, V>& cont)
+{
+    std::stringstream buf;
+    buf << "{";
+    for(auto it=cont.begin();it!=cont.end();it++) {
+        buf << it->first;
+        buf << ": ";
+        buf << it->second;
+        buf << ", ";
+    }
+    auto res = buf.str();
+    res.pop_back();
+    res.pop_back();
+    res.push_back('}');
+    os << res;
+    return os;
+}
+
 
 namespace utils {
+
+
 
 namespace time {
 
