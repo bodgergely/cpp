@@ -3,18 +3,18 @@
 #include <chrono>
 #include <cstdio>
 #include <fstream>
-#include <vector>
-#include <set>
-#include <unordered_set>
 #include <map>
+#include <set>
 #include <unordered_map>
+#include <unordered_set>
+#include <vector>
 
-template<typename T>
+template <typename T>
 std::ostream& operator<<(std::ostream& os, const std::vector<T>& vec)
 {
     std::stringstream buf;
     buf << "[";
-    for(int i=0;i<vec.size();i++) {
+    for (int i = 0; i < vec.size(); i++) {
         buf << vec[i];
         buf << ", ";
     }
@@ -26,12 +26,12 @@ std::ostream& operator<<(std::ostream& os, const std::vector<T>& vec)
     return os;
 }
 
-template<typename T>
+template <typename T>
 std::ostream& operator<<(std::ostream& os, const std::set<T>& cont)
 {
     std::stringstream buf;
     buf << "[";
-    for(auto it=cont.begin();it!=cont.end();it++) {
+    for (auto it = cont.begin(); it != cont.end(); it++) {
         buf << *it;
         buf << ", ";
     }
@@ -43,12 +43,12 @@ std::ostream& operator<<(std::ostream& os, const std::set<T>& cont)
     return os;
 }
 
-template<typename T>
+template <typename T>
 std::ostream& operator<<(std::ostream& os, const std::unordered_set<T>& cont)
 {
     std::stringstream buf;
     buf << "{";
-    for(auto it=cont.begin();it!=cont.end();it++) {
+    for (auto it = cont.begin(); it != cont.end(); it++) {
         buf << *it;
         buf << ", ";
     }
@@ -60,12 +60,12 @@ std::ostream& operator<<(std::ostream& os, const std::unordered_set<T>& cont)
     return os;
 }
 
-template<typename K, typename V>
+template <typename K, typename V>
 std::ostream& operator<<(std::ostream& os, const std::map<K, V>& cont)
 {
     std::stringstream buf;
     buf << "{";
-    for(auto it=cont.begin();it!=cont.end();it++) {
+    for (auto it = cont.begin(); it != cont.end(); it++) {
         buf << it->first;
         buf << ": ";
         buf << it->second;
@@ -79,12 +79,12 @@ std::ostream& operator<<(std::ostream& os, const std::map<K, V>& cont)
     return os;
 }
 
-template<typename K, typename V>
+template <typename K, typename V>
 std::ostream& operator<<(std::ostream& os, const std::unordered_map<K, V>& cont)
 {
     std::stringstream buf;
     buf << "{";
-    for(auto it=cont.begin();it!=cont.end();it++) {
+    for (auto it = cont.begin(); it != cont.end(); it++) {
         buf << it->first;
         buf << ": ";
         buf << it->second;
@@ -98,10 +98,7 @@ std::ostream& operator<<(std::ostream& os, const std::unordered_map<K, V>& cont)
     return os;
 }
 
-
 namespace utils {
-
-
 
 namespace time {
 

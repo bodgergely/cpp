@@ -1,26 +1,57 @@
 ﻿#include <algorithm>
+#include <atomic>
+#include <cassert>
+#include <cstdint>
+#include <cstdio>
 #include <iostream>
+#include <map>
+#include <sstream>
 #include <string>
+#include <thread>
 #include <unordered_set>
 #include <vector>
-#include <cstdio>
-#include <sstream>
-#include "utils.h"
+
+using u8 = uint8_t;
 
 using namespace std;
 
-int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv)
+//string bin(void* data, int count)
+//{
+//    string res{""};
+//    u8* c = (u8*)data;
+//    for (int i = 0; i < count; i++) {
+//        u8 byte = *(c + i);
+//        for (int j = 0; j < 8; j++) {
+//            if ((byte << j) & 0x80) {
+//                res.push_back('1');
+//            }
+//            else {
+//                res.push_back('0');
+//            }
+//        }
+//        res.push_back(' ');
+//    }
+//    res.pop_back();
+//    return res;
+//}
+
+int main()
 {
-    set<int> lis {1,2,3,4,5};
-    cout << lis << endl;
+    // double a = 1.2;
+    // double b = 1.0;
+    // double h = a - b;
+    //double h = 0.1;
+    //// printf("%f\n", h);
+    //cout << bin((void*)&h, sizeof(h)) << endl;
+    int res = 0x66666666;
+    res = 0x0;
+    char* pres = (char*)&res;
+    *(pres + 0) = 0xDE;
+    *(pres + 1) = 0xAD;
+    *(pres + 2) = 0xBE;
+    *(pres + 3) = 0xEF;
 
-    map<string, int> m = {{"gerike", 6}};
-    //stringstream ss;
-    //for(auto& v : m) {
-        //ss << v.first << ":" << v.second;
-    //}
-    //cout << ss.str();
-    cout << m;
+    cout << res << endl;
 
-    return 0;
+    return res;
 }
