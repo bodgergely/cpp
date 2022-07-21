@@ -98,10 +98,10 @@ std::ostream& operator<<(std::ostream& os, const std::unordered_map<K, V>& cont)
     return os;
 }
 
-namespace utils {
-
-namespace time {
-
+namespace utils
+{
+namespace time
+{
 auto getTime() { return std::chrono::high_resolution_clock::now(); }
 
 auto microseconds(std::chrono::high_resolution_clock::time_point after,
@@ -112,7 +112,8 @@ auto microseconds(std::chrono::high_resolution_clock::time_point after,
 }
 }  // namespace time
 
-class CircularQueue {
+class CircularQueue
+{
 public:
     CircularQueue(int k)
         : _capacity((size_t)k),
@@ -129,8 +130,7 @@ public:
         if (isEmpty()) {
             _head = 0;
             _tail = 0;
-        }
-        else {
+        } else {
             _tail = (_tail + 1) % _capacity;
         }
 
@@ -144,8 +144,7 @@ public:
         if (_head == _tail) {
             _head = _capacity;
             _tail = _capacity;
-        }
-        else {
+        } else {
             _head = (_head + 1) % _capacity;
         }
 
@@ -192,7 +191,8 @@ private:
 
 void endianness_test()
 {
-    union Test {
+    union Test
+    {
         uint32_t i;
         uint8_t c[2];
     };
@@ -200,11 +200,9 @@ void endianness_test()
     union Test a = {0x89ABCDEF};
     if ((a.c[0] == 0x89) && (a.c[1] == 0xAB)) {
         printf("BIG ENDIAN\n");
-    }
-    else if ((a.c[0] == 0xEF) && (a.c[1] == 0xCD)) {
+    } else if ((a.c[0] == 0xEF) && (a.c[1] == 0xCD)) {
         printf("LITTLE ENDIAN\n");
-    }
-    else {
+    } else {
         printf("NOT IMPLEMENTED\n");
     }
 }

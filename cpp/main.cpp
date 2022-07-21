@@ -1,57 +1,44 @@
-﻿#include <algorithm>
-#include <atomic>
+﻿#include "helper.h"
+
 #include <cassert>
 #include <cstdint>
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
-#include <map>
+#include <memory>
 #include <sstream>
-#include <string>
-#include <thread>
-#include <unordered_set>
+#include <string_view>
 #include <vector>
-
-using u8 = uint8_t;
 
 using namespace std;
 
-//string bin(void* data, int count)
-//{
-//    string res{""};
-//    u8* c = (u8*)data;
-//    for (int i = 0; i < count; i++) {
-//        u8 byte = *(c + i);
-//        for (int j = 0; j < 8; j++) {
-//            if ((byte << j) & 0x80) {
-//                res.push_back('1');
-//            }
-//            else {
-//                res.push_back('0');
-//            }
-//        }
-//        res.push_back(' ');
-//    }
-//    res.pop_back();
-//    return res;
-//}
+namespace
+{
+int func(int v) { return v * 2; }
+}  // namespace
+
+class Foo
+{
+public:
+    Foo();
+    ~Foo();
+
+private:
+    int v;
+};
 
 int main()
 {
-    // double a = 1.2;
-    // double b = 1.0;
-    // double h = a - b;
-    //double h = 0.1;
-    //// printf("%f\n", h);
-    //cout << bin((void*)&h, sizeof(h)) << endl;
-    int res = 0x66666666;
-    res = 0x0;
-    char* pres = (char*)&res;
-    *(pres + 0) = 0xDE;
-    *(pres + 1) = 0xAD;
-    *(pres + 2) = 0xBE;
-    *(pres + 3) = 0xEF;
+    switch (5) {
+    case 1: {
+        6;
+        break;
+    }
+    default:
+        break;
+    }
 
-    cout << res << endl;
-
-    return res;
+    std::cout << "The sum of 3 and 4 is: " << add(3, 4) << '\n';
+    cout << func(3) << '\n';
+    return 0;
 }
