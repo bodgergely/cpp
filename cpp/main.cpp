@@ -1,6 +1,4 @@
-﻿#include "helper.h"
-
-#include <cassert>
+﻿#include <cassert>
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
@@ -10,18 +8,25 @@
 #include <string_view>
 #include <vector>
 
+#include "helper.h"
+
 using namespace std;
 
 namespace
 {
 int func(int v) { return v * 2; }
+
 }  // namespace
 
 class Foo
 {
 public:
     Foo();
+
     ~Foo();
+
+protected:
+    void swim();
 
 private:
     int v;
@@ -39,6 +44,8 @@ int main()
     }
 
     std::cout << "The sum of 3 and 4 is: " << add(3, 4) << '\n';
+
     cout << func(3) << '\n';
+
     return 0;
 }

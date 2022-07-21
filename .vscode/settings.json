@@ -88,5 +88,6 @@
         "sstream": "cpp",
         "variant": "cpp",
         "execution": "cpp"
-    }
+    },
+    "editor.formatOnSave": true
 }
