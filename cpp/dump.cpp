@@ -15,7 +15,8 @@ void permutate(int n, vector<vector<int>>& res)
     }
 
     for (int i = 1; i <= n; i++) {
-        if (included.find(i) != included.end()) continue;
+        if (included.find(i) != included.end())
+            continue;
         included.insert(i);
         vv.push_back(i);
         permutate(n, res);
@@ -53,4 +54,22 @@ vector<vector<int>> subsets(int n)
     vector<vector<int>> res;
     subset(n, 1, res);
     return res;
+}
+
+void floatingPoint()
+{
+    unsigned int res = 0;
+    char* p = (char*)&res;
+    p = p + 3;
+    // *p |= 0x7F;
+    *p |= 0x00;
+    p--;
+    *p |= 0x7F;
+    p--;
+    *p |= 0xFF;
+    p--;
+    *p |= 0xFF;
+
+    float* fp = (float*)&res;
+    cout << *fp << ":" << utils::bin(*fp, sizeof(*fp), true) << endl;
 }

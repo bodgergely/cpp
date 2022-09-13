@@ -1,7 +1,8 @@
 alias t='clang-tidy -header-filter=.* ./cpp/main.cpp -- -DDEBUG -std=c++17 -Wall -Wextra -Weffc++ -Werror -Wpedantic -Wshadow -Wconversion'
 alias format='clang-format.exe -i ./cpp/*.cpp ./cpp/*.h'
-alias b='format; ./build.sh'
+alias b='./build.sh'
 alias run='$PWD/cpp/main.exe'
+alias rr=run
 alias r='b && run'
 alias e='vim ./cpp/main.cpp'
 

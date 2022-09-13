@@ -66,4 +66,33 @@ private:
 
 void endianness_test();
 
+template <class T>
+std::string bin(const T& num, int byteCount, bool littleEndian = true)
+{
+    std::string res{};
+    res.reserve(byteCount * 8);
+    const char mask = 0x80;
+    for (size_t i = 0; i < byteCount; i++) {
+        std::string buf{};
+        buf.reserve(8);
+        char* pnum = ((char*)&num) + i;
+        char currbyte = *pnum;
+        for (size_t j = 0; j < 8; j++) {
+            char b = currbyte & mask;
+            if (b) {
+                buf.push_back('1');
+            } else {
+                buf.push_back('0');
+            }
+            currbyte <<= 1;
+        }
+        if (littleEndian) {
+            res = buf + res;
+        } else {
+            res += buf;
+        }
+    }
+    return res;
+}
+
 }  // namespace utils

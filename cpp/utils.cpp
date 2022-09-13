@@ -125,7 +125,8 @@ CircularQueue::CircularQueue(int k)
 
 bool CircularQueue::enQueue(int value)
 {
-    if (isFull()) return false;
+    if (isFull())
+        return false;
     if (isEmpty()) {
         _head = 0;
         _tail = 0;
@@ -139,7 +140,8 @@ bool CircularQueue::enQueue(int value)
 
 bool CircularQueue::deQueue()
 {
-    if (isEmpty()) return false;
+    if (isEmpty())
+        return false;
     if (_head == _tail) {
         _head = _capacity;
         _tail = _capacity;
@@ -166,9 +168,15 @@ int CircularQueue::Rear()
         return _arr[_tail];
 }
 
-bool CircularQueue::isEmpty() { return _head == _capacity; }
+bool CircularQueue::isEmpty()
+{
+    return _head == _capacity;
+}
 
-bool CircularQueue::isFull() { return ((_tail + 1) % _capacity) == _head; }
+bool CircularQueue::isFull()
+{
+    return ((_tail + 1) % _capacity) == _head;
+}
 
 /////////////////////////////////////////////////////////////
 ///
