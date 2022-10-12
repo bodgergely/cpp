@@ -9,5 +9,6 @@ input.txt
 **/*.ilk
 **/*.pdb
 **/*.exe
+**/*.o
 .vs/
 **/*.swp
