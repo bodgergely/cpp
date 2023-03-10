@@ -14,7 +14,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="utils.cpp">
+    <ClCompile Include="helper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -23,6 +23,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="rdtsc.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helper.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
